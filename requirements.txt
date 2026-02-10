@@ -1,3 +1,4 @@
 flask
-pdfrw
+reportlab
+PyPDF2
 gunicorn
