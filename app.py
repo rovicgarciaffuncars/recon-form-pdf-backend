@@ -69,12 +69,9 @@ def generate_pdf():
     template = PdfReader(TEMPLATE_PATH)
 
     writer = PdfWriter()
-   page = template.pages[0]
-page.merge_page(overlay.pages[0])
-writer.add_page(page)
-
-
-
+    page = template.pages[0]
+    page.merge_page(overlay.pages[0])
+    writer.add_page(page)
     output = io.BytesIO()
     writer.write(output)
     output.seek(0)
