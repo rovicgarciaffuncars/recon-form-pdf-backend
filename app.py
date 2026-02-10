@@ -70,14 +70,9 @@ def generate_pdf():
 
     writer = PdfWriter()
    page = template.pages[0]
-
-# PyPDF2 compatibility (merge_page vs mergePage)
-if hasattr(page, "merge_page"):
-    page.merge_page(overlay.pages[0])
-else:
-    page.mergePage(overlay.pages[0])
-
+page.merge_page(overlay.pages[0])
 writer.add_page(page)
+
 
 
     output = io.BytesIO()
